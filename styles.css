@@ -1,0 +1,114 @@
+:root{
+  --bg:#06030b;
+  --card:#0e0920;
+  --accent-1: #7a3cff;
+  --accent-2: #3f00ff;
+  --glass: rgba(255,255,255,0.04);
+  --muted: rgba(255,255,255,0.65);
+  --radius: 14px;
+  --container: 1100px;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  min-height:100%;
+  background:
+    radial-gradient(1200px 400px at 10% 10%, rgba(63,0,255,0.06), transparent 6%),
+    radial-gradient(900px 300px at 90% 90%, rgba(122,60,255,0.04), transparent 6%),
+    var(--bg);
+  color:#eae8f5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  padding-bottom:60px;
+}
+
+/* Layout helpers */
+.container{max-width:var(--container); margin:0 auto; padding:28px;}
+.header-grid{display:flex; align-items:center; justify-content:space-between; gap:16px}
+.brand{display:flex;align-items:center;gap:10px}
+.logo-dot{
+  width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;font-weight:700;color:white;box-shadow:0 6px 18px rgba(63,0,255,0.18)
+}
+.brand-name{font-weight:700; letter-spacing:0.3px}
+
+/* Topbar */
+.topbar{position:sticky;top:0;background:linear-gradient(180deg, rgba(6,3,11,0.6), rgba(6,3,11,0.25));backdrop-filter: blur(6px); z-index:30}
+.nav a{color:var(--muted);text-decoration:none;margin:0 10px;font-weight:500}
+.btn-outline{padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);}
+
+/* Hero */
+.hero{padding:72px 0 40px;}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center}
+.hero-left h1{font-size:48px;margin:0 0 12px;line-height:1.02;font-weight:800}
+.hero-left h1 span{background:linear-gradient(90deg,var(--accent-1),var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+.lead{color:rgba(234,232,245,0.75); margin-bottom:18px; max-width:520px}
+.hero-ctas{display:flex;gap:12px;margin-bottom:18px}
+.btn-primary{background:linear-gradient(90deg,var(--accent-1),var(--accent-2)); color:white;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:0 8px 30px rgba(63,0,255,0.18)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06); padding:10px 16px;border-radius:12px;color:var(--muted);text-decoration:none}
+
+/* Ask button */
+.ask button{background:linear-gradient(90deg,#120022,rgba(63,0,255,0.06));border:1px solid rgba(255,255,255,0.04);padding:10px 14px;border-radius:10px;color:var(--muted);display:inline-flex;gap:8px;align-items:center}
+.mic{stroke:currentColor;opacity:0.9}
+
+/* Hero card */
+.hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:20px; padding:34px; position:relative; overflow:hidden; box-shadow: 0 20px 50px rgba(6,3,11,0.6)}
+.glow-ring{position:absolute; right:-60px; top:-40px; width:260px;height:260px;border-radius:50%; background:radial-gradient(circle at 30% 30%, rgba(122,60,255,0.14), transparent 30%); filter:blur(10px); transform:rotate(10deg)}
+.ai-mark{width:88px;height:88px;border-radius:18px;background:linear-gradient(90deg,var(--accent-2),var(--accent-1));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;margin:10px auto 20px;box-shadow:0 12px 40px rgba(122,60,255,0.15)}
+.chip-grid{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.chip{background:rgba(255,255,255,0.03);padding:6px 12px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+/* Features */
+.features{padding:18px 0 40px}
+.feature-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:22px;border-radius:14px;box-shadow:0 8px 30px rgba(10,7,20,0.5)}
+.card h3{margin:0 0 8px}
+
+/* Stats */
+.stats{padding:36px 0}
+.stats-grid{display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:center}
+.stats-left .stat{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px;margin-bottom:12px}
+.stat-value{font-weight:800;font-size:20px}
+.stat-label{color:var(--muted);font-size:13px}
+
+/* map placeholder */
+.map-placeholder{height:220px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));position:relative;display:flex;align-items:center;justify-content:center}
+.map-pin{position:absolute;width:12px;height:12px;border-radius:50%;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));box-shadow:0 8px 24px rgba(63,0,255,0.18)}
+.map-label{position:absolute;bottom:12px;left:12px;color:var(--muted);font-size:13px}
+
+/* Goals */
+.goals{padding:36px 0}
+.goals-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.goal-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+
+/* Equipment */
+.equipment{padding:36px 0}
+.equipment-grid{display:grid;grid-template-columns:1fr 220px;gap:24px;align-items:center}
+.equipment-list{margin:12px 0 0;padding-left:18px;color:var(--muted)}
+
+/* AI badge */
+.ai-shape{width:160px;height:160px;border-radius:26px;background:linear-gradient(135deg, rgba(63,0,255,0.12), rgba(122,60,255,0.08));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;box-shadow:0 24px 60px rgba(63,0,255,0.08);margin-left:auto}
+
+/* Community CTA */
+.community{padding:40px 0}
+.community-box{background:linear-gradient(90deg, rgba(63,0,255,0.06), rgba(122,60,255,0.04));padding:28px;border-radius:14px;text-align:center}
+
+/* Footer */
+.site-footer{margin-top:40px;padding:30px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+.footer-grid{display:flex;justify-content:space-between;align-items:center}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr; text-align:center}
+  .hero-right{order:2}
+  .hero-left{order:1}
+  .feature-cards{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr}
+  .goals-grid{grid-template-columns:1fr}
+  .equipment-grid{grid-template-columns:1fr}
+  .footer-grid{flex-direction:column;gap:12px}
+}
